@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MvvmToolkitExmple.ViewModel"
+             x:Class="MvvmToolkitExmple.View.CaculPage"
+             Title="CaculPage">
+
+    <ContentPage.BindingContext>
+        <vm:VMCalcul />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="LightGreen">
+            <Label Text="On commence par le calcul de la capacité d’ingestion de la vache :"
+                   FontAttributes="Italic" />
+
+            <Button Text="back" Clicked="OnCalculButtonClicked" />
+
+            <Label Text="Veuillez saisir :" />
+
+            <Label Text="Poids vif (kg)" />
+            <Entry Placeholder="Poids vif (kg)" Text="{Binding CowData.PoidsVif, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Production en Lait (kg)" />
+            <Entry Placeholder="Production en Lait (kg)" Text="{Binding CowData.ProductionLait, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Note d'état corporel" />
+            <Entry Placeholder="Note d'état corporel" Text="{Binding CowData.NoteEtatCorps, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Parité" />
+            <Entry Placeholder="Parité" Text="{Binding CowData.Parite, Mode=TwoWay}" />
+
+            <Label Text="Semaine de lactation" />
+            <Entry Placeholder="Semaine de lactation" Text="{Binding CowData.SemaineLactation, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Semaine de Gestation" />
+            <Entry Placeholder="Semaine de Gestation" Text="{Binding CowData.SemaineGestation, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Age (mois)" />
+            <Entry Placeholder="Age (mois)" Text="{Binding CowData.Age, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Button Text="Calculer" BackgroundColor="DarkGreen" TextColor="White" Command="{Binding LoadCMD}" />
+
+            <Label Text="Résultat CI:" FontAttributes="Bold" />
+            <Label Text="{Binding ResultCI}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

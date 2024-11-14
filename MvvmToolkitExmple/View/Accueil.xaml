@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmToolkitExmple.View.Accueil"
+             Title="Accueil">        
+    <ContentPage.Resources>
+
+            <!-- Entry Style -->
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="Gray" />
+                <Setter Property="TextColor" Value="Black" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="TextColor" Value="White" />
+                        <Setter Property="BackgroundColor" Value="Black" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Button Style -->
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
+                <Style.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="TextColor" Value="White" />
+                        <Setter Property="BackgroundColor" Value="Black" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Entry Validation Styles -->
+            <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style x:Key="ValidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+
+        </ContentPage.Resources>
+
+
+        <!-- ScrollView to enable scrolling -->
+        <ScrollView>
+            <VerticalStackLayout>
+                <Label Text="Bienvenue à l’Optimiseur simple de la Nutrition des vaches laitières"  
+               HorizontalTextAlignment="Center"
+               FontSize="35"
+               Margin="0,15"
+               FontAttributes="Bold">
+
+                </Label>
+
+
+
+
+                <!-- Grid Layout with Buttons -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- First Row -->
+                    <Button Grid.Row="0" Grid.Column="0" Text="Animal" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Padding="10" Margin="10,10" />
+
+                    <Button Grid.Row="0" Grid.Column="1" Text="Calcul" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Clicked="OnCalculButtonClicked"
+                    Padding="10" Margin="10,10" />
+
+                    <!-- Second Row -->
+                    <Button Grid.Row="1" Grid.Column="0" Text="Conseils" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Padding="10" Margin="10,10" />
+
+                    <Button Grid.Row="1" Grid.Column="1" Text="Statistique" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Padding="10" Margin="10,10" />
+
+                    <!-- Third Row -->
+                    <Button Grid.Row="2" Grid.Column="0" Text="Fournisseur" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Padding="10" Margin="10,10" />
+
+                    <Button Grid.Row="2" Grid.Column="1" Text="Prix" 
+                    Style="{StaticResource buttonStyle}"
+                    FontSize="25"
+                    Padding="10" Margin="10,10" />
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+
+</ContentPage>
+
