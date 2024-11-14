@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Resources;
 
 namespace MvvmToolkitExmple
 {
@@ -18,6 +19,8 @@ namespace MvvmToolkitExmple
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            
 
             return builder.Build();
         }

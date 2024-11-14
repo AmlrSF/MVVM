@@ -10,7 +10,7 @@
     </ContentPage.BindingContext>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="LightGreen">
+        <VerticalStackLayout Padding="20" Spacing="10" BackgroundColor="black">
             <Label Text="On commence par le calcul de la capacité d’ingestion de la vache :"
                    FontAttributes="Italic" />
 
@@ -18,31 +18,59 @@
 
             <Label Text="Veuillez saisir :" />
 
-            <Label Text="Poids vif (kg)" />
-            <Entry Placeholder="Poids vif (kg)" Text="{Binding CowData.PoidsVif, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Poids vif (kg) vif (450-800 kg)" />
+            <Entry Placeholder="Poids " Text="{Binding CowData.PoidsVif, Mode=TwoWay}" Keyboard="Numeric" />
 
-            <Label Text="Production en Lait (kg)" />
-            <Entry Placeholder="Production en Lait (kg)" Text="{Binding CowData.ProductionLait, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Production en Lait (kg) (5-60 kg)" />
+            <Entry Placeholder="Production en Lait " Text="{Binding CowData.ProductionLait, Mode=TwoWay}" Keyboard="Numeric" />
 
-            <Label Text="Note d'état corporel" />
-            <Entry Placeholder="Note d'état corporel" Text="{Binding CowData.NoteEtatCorps, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Note d'état corporel (0-5)" />
+            <Entry Placeholder="Note d'état corporel (0-5)" Text="{Binding CowData.NoteEtatCorps, Mode=TwoWay}" Keyboard="Numeric" />
 
-            <Label Text="Parité" />
-            <Entry Placeholder="Parité" Text="{Binding CowData.Parite, Mode=TwoWay}" />
+            <Label Text="Parité (Primipare, Multipare, Tarie)" />
+            <Entry Placeholder="Parité (Primipare, Multipare, Tarie)" Text="{Binding CowData.Parite, Mode=TwoWay}" />
 
-            <Label Text="Semaine de lactation" />
-            <Entry Placeholder="Semaine de lactation" Text="{Binding CowData.SemaineLactation, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Semaine de lactation  (>= 0)" />
+            <Entry Placeholder="Semaine de lactation (>= 0)" Text="{Binding CowData.SemaineLactation, Mode=TwoWay}" Keyboard="Numeric" />
 
-            <Label Text="Semaine de Gestation" />
-            <Entry Placeholder="Semaine de Gestation" Text="{Binding CowData.SemaineGestation, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Semaine de Gestation (>= 0)" />
+            <Entry Placeholder="Semaine de Gestation (>= 0)" Text="{Binding CowData.SemaineGestation, Mode=TwoWay}" Keyboard="Numeric" />
 
-            <Label Text="Age (mois)" />
-            <Entry Placeholder="Age (mois)" Text="{Binding CowData.Age, Mode=TwoWay}" Keyboard="Numeric" />
+            <Label Text="Age (mois) (>= 0 mois)" />
+            <Entry Placeholder="Age (>= 0 mois)" Text="{Binding CowData.Age, Mode=TwoWay}" Keyboard="Numeric" />
 
             <Button Text="Calculer" BackgroundColor="DarkGreen" TextColor="White" Command="{Binding LoadCMD}" />
 
             <Label Text="Résultat CI:" FontAttributes="Bold" />
             <Label Text="{Binding ResultCI}" />
+
+            <!-- List of Cows -->
+            <Label Text="Liste des Vaches :" FontAttributes="Bold" />
+
+            <ListView ItemsSource="{Binding CowsList}" HasUnevenRows="True" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Vertical" BackgroundColor="White" >
+                                <HorizontalStackLayout>
+                                    <Label Text="Id : " TextColor="Black" />
+                                    <Label Text="{Binding Id}" TextColor="Black" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="weight : " TextColor="Black" />
+                                    <Label Text="{Binding weight}" TextColor="Black" />
+                                </HorizontalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label Text="Age : " TextColor="Black" />
+                                    <Label Text="{Binding Age}" TextColor="Gray" />
+                                </HorizontalStackLayout>
+                              
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
