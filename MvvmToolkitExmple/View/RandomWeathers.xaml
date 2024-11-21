@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmToolkitExmple.View.RandomWeathers"
+             xmlns:vm="clr-namespace:MvvmToolkitExmple.ViewModel"
+             Title="RandomWeathers">
+    <ContentPage.BindingContext>
+        <vm:VMWeather />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <HorizontalStackLayout 
+            Spacing="20"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+            <Label 
+                 Text="Random Weather App"
+                 FontSize="Large"
+                 FontFamily="Arial"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" />
+            <Button 
+                 Text="Back" 
+                 Background="white"
+                 Clicked="OnCalculButtonClicked" 
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Padding="20">
+            <HorizontalStackLayout Spacing="20" Padding="20"
+HorizontalOptions="Center"
+VerticalOptions="Center">
+                <Entry x:Name="CityEntry" Placeholder="Enter city name" />
+                <Button Text="Get Weather" Command="{Binding FetchWeatherCommand}" 
+                CommandParameter="{Binding Text, Source={x:Reference CityEntry}}" />
+            </HorizontalStackLayout>
+            <Label Text="{Binding WeatherInfo}" VerticalOptions="Center" HorizontalOptions="Center" />
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

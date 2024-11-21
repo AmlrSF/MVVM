@@ -79,8 +79,9 @@
                     Padding="10" Margin="10,10" />
 
                     <!-- Second Row -->
-                    <Button Grid.Row="1" Grid.Column="0" Text="Conseils" 
+                    <Button Grid.Row="1" Grid.Column="0" Text="Random Weather" 
                     Style="{StaticResource buttonStyle}"
+                    Clicked="OnCalculButtonClickedWeather"
                     FontSize="25"
                     Padding="10" Margin="10,10" />
 

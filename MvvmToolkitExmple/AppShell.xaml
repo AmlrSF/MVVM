@@ -17,6 +17,11 @@
      ContentTemplate="{DataTemplate local:CaculPage}"
      Route="CaculPage" />
 
+    <ShellContent
+      Title="Random weather page"
+      ContentTemplate="{DataTemplate local:RandomWeathers}"
+      Route="RandomWeatherPage" 
+    />  
 
 
 </Shell>

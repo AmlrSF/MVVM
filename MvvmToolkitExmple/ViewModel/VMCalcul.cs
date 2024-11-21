@@ -3,7 +3,6 @@ using CommunityToolkit.Mvvm.Input;
 using MvvmToolkitExmple.business;
 using MvvmToolkitExmple.Entities;
 using MvvmToolkitExmple.Infrastucture;
-using MvvmToolkitExmple.Infrastucture;
 using MvvmToolkitExmple.Services;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -27,7 +26,7 @@ namespace MvvmToolkitExmple.ViewModel
             CowsList = new ObservableCollection<CowInfo>();
             LoadCMD = new RelayCommand(async () => await CalculateCI());
             LoadAllCowsCommand = new RelayCommand(async () => await LoadAllCows());
-        }        }
+        }        
 
         [ObservableProperty]
         private double resultCI;

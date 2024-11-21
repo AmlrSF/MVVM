@@ -1,4 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
+
+using MvvmToolkitExmple.Services;
+using MvvmToolkitExmple.ViewModel;
 using System.Resources;
 
 namespace MvvmToolkitExmple
@@ -20,7 +23,9 @@ namespace MvvmToolkitExmple
     		builder.Logging.AddDebug();
 #endif
 
-            
+
+            builder.Services.AddSingleton<IweatherWebService, WeatherService>();
+            builder.Services.AddSingleton<VMWeather>();
 
             return builder.Build();
         }

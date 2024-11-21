@@ -14,5 +14,10 @@ namespace MvvmToolkitExmple.View
         {
             await Shell.Current.GoToAsync("//CaculPage");
         }
+
+        private async void OnCalculButtonClickedWeather(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//RandomWeatherPage");
+        }
     }
 }
