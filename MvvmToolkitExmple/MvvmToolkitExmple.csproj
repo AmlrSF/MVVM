@@ -68,6 +68,12 @@
 	  <MauiXaml Update="View\CaculPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="View\CaculRation.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\FourragePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="View\RandomWeathers.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

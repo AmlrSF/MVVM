@@ -5,7 +5,7 @@
              Title="Accueil">        
     <ContentPage.Resources>
 
-            <!-- Entry Style -->
+           
             <Style x:Key="EntryStyle" TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="Gray" />
                 <Setter Property="TextColor" Value="Black" />
@@ -17,7 +17,7 @@
                 </Style.Triggers>
             </Style>
 
-            <!-- Button Style -->
+        
             <Style x:Key="buttonStyle" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="White" />
                 <Setter Property="TextColor" Value="Black" />
@@ -29,7 +29,7 @@
                 </Style.Triggers>
             </Style>
 
-            <!-- Entry Validation Styles -->
+           
             <Style x:Key="InvalidEntryStyle" TargetType="Entry">
                 <Setter Property="TextColor" Value="Red" />
             </Style>
@@ -40,7 +40,7 @@
         </ContentPage.Resources>
 
 
-        <!-- ScrollView to enable scrolling -->
+        
         <ScrollView>
             <VerticalStackLayout>
                 <Label Text="Bienvenue à l’Optimiseur simple de la Nutrition des vaches laitières"  
@@ -54,7 +54,6 @@
 
 
 
-                <!-- Grid Layout with Buttons -->
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -66,9 +65,9 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <!-- First Row -->
-                    <Button Grid.Row="0" Grid.Column="0" Text="Animal" 
+                    <Button Grid.Row="0" Grid.Column="0" Text="Cacul Ration" 
                     Style="{StaticResource buttonStyle}"
+                    Clicked="OnCalculRationButtonClicked"
                     FontSize="25"
                     Padding="10" Margin="10,10" />
 
@@ -78,7 +77,7 @@
                     Clicked="OnCalculButtonClicked"
                     Padding="10" Margin="10,10" />
 
-                    <!-- Second Row -->
+                
                     <Button Grid.Row="1" Grid.Column="0" Text="Random Weather" 
                     Style="{StaticResource buttonStyle}"
                     Clicked="OnCalculButtonClickedWeather"
@@ -90,7 +89,6 @@
                     FontSize="25"
                     Padding="10" Margin="10,10" />
 
-                    <!-- Third Row -->
                     <Button Grid.Row="2" Grid.Column="0" Text="Fournisseur" 
                     Style="{StaticResource buttonStyle}"
                     FontSize="25"

@@ -21,7 +21,19 @@
       Title="Random weather page"
       ContentTemplate="{DataTemplate local:RandomWeathers}"
       Route="RandomWeatherPage" 
-    />  
+    />
+
+    <ShellContent 
+        Title="RationsCacul"
+        ContentTemplate="{DataTemplate local:CaculRation}"
+        Route="CaculRation"
+    />
+
+    <ShellContent 
+        Title="Fourrage"
+        ContentTemplate="{DataTemplate local:FourragePage}"
+        Route="FourragePage"
+    />
 
 
 </Shell>

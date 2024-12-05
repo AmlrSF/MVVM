@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MvvmToolkitExmple.ViewModel"
+             x:Class="MvvmToolkitExmple.View.FourragePage"
+             Title="FourragePage">
+    <ContentPage.BindingContext>
+        <vm:CaculRationViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="BackgroundColor" Value="Black" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="10">
+
+        <Label Text="Liste des Fourrages" FontSize="25" HorizontalOptions="Center" />
+
+        
+        <CollectionView ItemsSource="{Binding Forages}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <Label Text="{Binding Name}" WidthRequest="150" />
+                        <Label Text="{Binding PercentMS, StringFormat='% {0}'}" WidthRequest="100" />
+                        <Entry Placeholder="KgMB" Text="{Binding KgMB, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="100" />
+                        <Label Text="{Binding KgMS, StringFormat='{0:F2} KgMS'}" WidthRequest="100" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+        <Button Text="Calculer la Somme" Command="{Binding CalculateCommand}" FontSize="20" Margin="0,20,0,10" />
+
+        
+        <Label Text="Somme Totale de KgMS:" FontSize="18" />
+        <Label Text="{Binding TotalKgMS, StringFormat='{0:F2} KgMS'}" FontSize="18" TextColor="Green" />
+
+
+        <Label Text="{Binding AlertMessage}" 
+       FontSize="16" 
+       TextColor="{Binding AlertColor}" 
+       IsVisible="{Binding AlertMessage, Converter={StaticResource StringNotEmptyConverter}}" />
+    </VerticalStackLayout>
+</ContentPage>
